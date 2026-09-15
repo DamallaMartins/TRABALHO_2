@@ -1,6 +1,6 @@
 import 'Veiculos.dart';
 
-class Moto{
+class Moto extends Veiculos{
   int _cilindradas = 0;
   String _tipo = '';
  

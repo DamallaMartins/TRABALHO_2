@@ -1,6 +1,6 @@
 import 'Veiculos.dart';
 
-class Caminhao{
+class Caminhao extends Veiculos{
   double _capacidadeCarga = 0;
   int _numeroEixos = 0;
  
