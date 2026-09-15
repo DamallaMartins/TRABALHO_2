@@ -21,6 +21,11 @@ class Carro extends Veiculos{
   
   @override
   void calcularDiaria(){
+    
+    
+  }
+
+  void exibirDados(){
     if(disponivel == true){
       print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tipo de combustivel $_tipoCombustivel.");
       print("Esse veículo está disponivel!");
@@ -28,10 +33,6 @@ class Carro extends Veiculos{
       print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tipo de combustivel $_tipoCombustivel.");
       print("Esse veículo NÃO se encontra disponivel!");
     }
-  }
-
-  void exibirDados(){
-
   }
 
 }
