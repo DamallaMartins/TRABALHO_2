@@ -42,6 +42,11 @@ class Veiculos{
   print("O veiculo não foi definido para o calculo da diaria ser realizado.");
  }
  void alterarDisponibilidade(){
+  if(_disponivel == true){
+    _disponivel = false;
+  }else{
+    _disponivel = true;
+  }
 
  }
 

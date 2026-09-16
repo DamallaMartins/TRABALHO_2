@@ -41,5 +41,21 @@ class Cliente{
     }
  }
 
+ void liberar(){
+  if(_bloqueado == true){
+    _bloqueado = false;
+  }else{
+    print("O cliente não se encontra bloqueado!");
+  }
+ }
+
+ void bloquear(){
+  if(_bloqueado == false){
+    _bloqueado = true;
+  }else{
+    print("O cliente já se encontra bloqueado!");
+  }
+ }
+
 
 }

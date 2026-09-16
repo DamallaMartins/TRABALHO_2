@@ -4,6 +4,7 @@ import 'Carro.dart';
 import 'Moto.dart';
 import 'Caminhao.dart';
 import 'Locacao.dart';
+import 'dart:io';
 
 void main(){
   Veiculos veiculo = Veiculos(placa: "ABC123", marca: "Golzinho", modelo: "Bonitinho", ano: 1967, disponivel: false);
@@ -28,4 +29,54 @@ void main(){
   locacao.calcularValor();
   locacao.finalizar();
   locacao.exibirResumo();
+
+
+  print("========================= \n LOCADORA DE VEÍCULOS: \n=========================");
+  print("1 - Cadastrar carro");
+  print("2 - Cadastrar moto");
+  print("3 - Cadastrar caminhão");
+  print("4 - Cadastrar cliente");
+  print("5 - Listar veículos");
+  print("6 - Listar clientes");
+  print("7 - Realizar locação");
+  print("8 - Finalizar locação");
+  print("9 - Consultar locações");
+  print("0 - Sair");
+
+  stdout.write("Escolha uma opção: ");
+  String opcao = stdin.readLineSync()!;
+  switch(opcao){
+    case "1":
+      print("\nCadastrar carro"); 
+      break;
+    case "2":
+      print("\nCadastrar moto");
+      break;
+    case "3":
+      print("\nCadastrar caminhão");
+      break;
+    case "4":
+      print("\nCadastrar cliente");
+      break;
+    case "5":
+      print("\nListar veículos");
+      break;
+    case "6":
+      print("\nListar clientes");
+      break;
+    case "7":
+      print("\nRealizar locação");
+      break;
+    case "8":
+      print("\nFinalizar locação");
+      break;
+    case "9":
+      print("\nConsultar locações");
+      break;
+    case "0":
+      print("\nSair");
+      break;
+    default:
+      print("\nOpção inválida!");
+  }
 }

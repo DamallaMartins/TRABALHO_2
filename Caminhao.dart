@@ -20,12 +20,12 @@ class Caminhao extends Veiculos{
   
   
   @override
-  double calcularDiaria(){
+  void calcularDiaria(){
     double valor = _capacidadeCarga * 0.5;
     print("O valor da diaria do caminhão é: $valor");
-    return valor;
   }
 
+  @override
   void exibirDados(){
     if(disponivel == true){
       print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, capacidade de carga $_capacidadeCarga e tem $_numeroEixos eixos.");

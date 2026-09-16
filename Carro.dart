@@ -21,10 +21,13 @@ class Carro extends Veiculos{
   
   @override
   void calcularDiaria(){
+    double valor = 120.0;
+    print("O valor da diaria do carro é: $valor");
     
     
   }
 
+  @override
   void exibirDados(){
     if(disponivel == true){
       print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tipo de combustivel $_tipoCombustivel.");
