@@ -38,8 +38,8 @@ class Veiculos{
     }
  }
 
- void calcularDiaria(){
-  print("O veiculo não foi definido para o calculo da diaria ser realizado.");
+ double calcularDiaria(){
+  return 0.0;
  }
  void alterarDisponibilidade(){
   if(_disponivel == true){

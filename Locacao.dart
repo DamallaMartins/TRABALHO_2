@@ -31,7 +31,7 @@ class Locacao{
   Locacao({required this.cliente, required this.veiculo, required this._dias, required this._valorTotal, required this._ativa});
 
   void calcularValor(){
-    _valorTotal = _dias * 100.0;
+    _valorTotal = _dias * veiculo.calcularDiaria();
   }
 
   void finalizar(){

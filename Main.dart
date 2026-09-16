@@ -32,6 +32,7 @@ void main(){
 
   List<Veiculos> listaVeiculos = [];
   List<Cliente> listaClientes = [];
+  List<Locacao> listaLocacoes = [];
 
 
   print("========================= \n LOCADORA DE VEÍCULOS: \n=========================");
@@ -74,7 +75,9 @@ void main(){
         stdout.write("Tipo de combustível: ");
         String tipoCombustivel = stdin.readLineSync()!;
         listaVeiculos.add(Carro(placa: placa, marca: marca, modelo: modelo, ano: ano, disponivel: disponivel, numeroPortas: numeroPortas, tipoCombustivel: tipoCombustivel));
-        print("Carro cadastrado com sucesso!");
+        print("Carro cadastrado com sucesso!\n");
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "2":
         print("\nCadastrar moto\n-----");
@@ -100,7 +103,9 @@ void main(){
         stdout.write("Tipo: ");
         String tipo = stdin.readLineSync()!;
         listaVeiculos.add(Moto(placa: placa, marca: marca, modelo: modelo, ano: ano, disponivel: disponivel, cilindradas: cilindradas, tipo: tipo));
-        print("Moto cadastrada com sucesso!");
+        print("Moto cadastrada com sucesso!\n");
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "3":
         print("\nCadastrar caminhão\n-----");
@@ -126,7 +131,9 @@ void main(){
         stdout.write("Número de eixos: ");
         int numeroEixos = int.parse(stdin.readLineSync()!);
         listaVeiculos.add(Caminhao(placa: placa, marca: marca, modelo: modelo, ano: ano, disponivel: disponivel, capacidadeCarga: capacidadeCarga, numeroEixos: numeroEixos));
-        print("Caminhão cadastrado com sucesso!");
+        print("Caminhão cadastrado com sucesso!\n");
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "4":
         print("\nCadastrar cliente\n-----");
@@ -148,7 +155,9 @@ void main(){
           print("O cliente será cadastrado como bloqueado.");
         }
         listaClientes.add(Cliente(nome: nome, cpf: cpf, telefone: telefone, cnh: cnh, bloqueado: bloqueado));
-        print("Cliente cadastrado com sucesso!");
+        print("\nCliente cadastrado com sucesso!\n");
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "5":
         print("\nListar veículos\n-----");
@@ -156,21 +165,83 @@ void main(){
           veiculo.exibirDados();
           veiculo.calcularDiaria();
         }
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "6":
         print("\nListar clientes\n-----");
         for (var cliente in listaClientes) {
           cliente.exibirDados();
         }
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "7":
         print("\nRealizar locação\n-----");
+        stdout.write("Digite o CPF do cliente: ");
+        int cpf = int.parse(stdin.readLineSync()!);
+        stdout.write("Digite a placa do veículo: ");
+        String placa = stdin.readLineSync()!;
+        stdout.write("Quantidade de dias: ");
+        int dias = int.parse(stdin.readLineSync()!);
+        Cliente? clienteEncontrado;
+        Veiculos? veiculoEncontrado;
+
+        for (var cliente in listaClientes) {
+          if (cliente.cpf == cpf) {
+            clienteEncontrado = cliente;
+            break;
+          }
+        }
+
+        for (var veiculo in listaVeiculos) {
+          if (veiculo.placa == placa) {
+            veiculoEncontrado = veiculo;
+            break;
+          }
+        }
+
+        if (clienteEncontrado != null && !clienteEncontrado.bloqueado && veiculoEncontrado != null) {
+          Locacao locacao = Locacao(cliente: clienteEncontrado, veiculo: veiculoEncontrado, dias: dias, valorTotal: 0.0, ativa: true);
+          locacao.calcularValor();
+          listaLocacoes.add(locacao);
+          print("Locação realizada com sucesso!");
+        } else {
+          print("Cliente ou veículo não encontrado.");
+        }
+
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "8":
         print("\nFinalizar locação\n-----");
+        stdout.write("Digite o CPF do cliente: ");
+        int cpfFinalizar = int.parse(stdin.readLineSync()!);
+        Locacao? locacaoEncontrada;
+
+        for (var locacao in listaLocacoes) {
+          if (locacao.getCliente.cpf == cpfFinalizar && locacao.getAtiva) {
+            locacaoEncontrada = locacao;
+            break;
+          }
+        }
+
+        if (locacaoEncontrada != null) {
+          locacaoEncontrada.finalizar();
+          print("Locação finalizada com sucesso!");
+        } else {
+          print("Locação não encontrada ou já finalizada.");
+        }
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "9":
         print("\nConsultar locações\n-----");
+        for (var locacao in listaLocacoes) {
+          locacao.exibirResumo();
+        }
+        stdout.write("\n=====================\nAPERTE ENTER PARA CONTINUAR...\n=====================");
+        stdin.readLineSync();
         break;
       case "0":
         print("\nSair");

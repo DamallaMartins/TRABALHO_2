@@ -18,10 +18,8 @@ class Moto extends Veiculos{
   
   
   @override
-  void calcularDiaria(){
-    double valor = 90.0;
-    print("O valor da diaria da moto é: $valor");
-
+  double calcularDiaria(){
+    return 90.0;
   }
 
   @override
