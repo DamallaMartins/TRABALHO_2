@@ -30,10 +30,12 @@ class Carro extends Veiculos{
   @override
   void exibirDados(){
     if(disponivel == true){
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tipo de combustivel $_tipoCombustivel.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Carro\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nNúmero de Portas: $_numeroPortas\nTipo de Combustível: $_tipoCombustivel");
       print("Esse veículo está disponivel!");
     }else{
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tipo de combustivel $_tipoCombustivel.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Carro\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nNúmero de Portas: $_numeroPortas\nTipo de Combustível: $_tipoCombustivel");
       print("Esse veículo NÃO se encontra disponivel!");
     }
   }

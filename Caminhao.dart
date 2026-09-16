@@ -28,10 +28,12 @@ class Caminhao extends Veiculos{
   @override
   void exibirDados(){
     if(disponivel == true){
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, capacidade de carga $_capacidadeCarga e tem $_numeroEixos eixos.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Caminhão\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nCapacidade de Carga: $_capacidadeCarga\nNúmero de Eixos: $_numeroEixos");
       print("Esse veículo está disponivel!");
     }else{
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, capacidade de carga $_capacidadeCarga e tem $_numeroEixos eixos.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Caminhão\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nCapacidade de Carga: $_capacidadeCarga\nNúmero de Eixos: $_numeroEixos");
       print("Esse veículo NÃO se encontra disponivel!");
     }
   }

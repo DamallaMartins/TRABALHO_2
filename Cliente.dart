@@ -33,10 +33,12 @@ class Cliente{
 
   void exibirDados(){
   if(_bloqueado == false){
-      print("Cliente $_nome, seu cpf é $_cpf, telefone $_telefone, cnh $_cnh.");
+      print("======================\nDADOS DO CLIENTE:\n======================");
+      print("Cliente: $_nome\nCPF: $_cpf\nTelefone: $_telefone\nCNH: $_cnh.");
       print("No momento você não se encontra bloqueado.");
     }else{
-      print("Cliente $_nome, seu cpf é $_cpf, telefone $_telefone, cnh $_cnh.");
+      print("======================\nDADOS DO CLIENTE:\n======================");
+      print("Cliente: $_nome\nCPF: $_cpf\nTelefone: $_telefone\nCNH: $_cnh.");
       print("Você se encontra BLOQUEADO!");
     }
  }

@@ -27,10 +27,13 @@ class Moto extends Veiculos{
   @override
   void exibirDados(){
     if(disponivel == true){
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tem $_cilindradas é do tipo $_tipo.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Moto\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nCilindradas: $_cilindradas\nTipo: $_tipo");
+
       print("Esse veículo está disponivel!");
     }else{
-      print("O veiculo tem a placa: $placa, pertence a marca: $marca, é do modelo: $modelo, é do ano: $ano, tem $_cilindradas é do tipo $_tipo.");
+      print("======================\nDADOS DO VEÍCULO:\n======================");
+      print("Veiculo: Moto\nPlaca: $placa\nMarca: $marca\nModelo: $modelo\nAno: $ano\nCilindradas: $_cilindradas\nTipo: $_tipo");
       print("Esse veículo NÃO se encontra disponivel!");
     }
   }
