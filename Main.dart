@@ -45,38 +45,42 @@ void main(){
 
   stdout.write("Escolha uma opção: ");
   String opcao = stdin.readLineSync()!;
-  switch(opcao){
-    case "1":
-      print("\nCadastrar carro"); 
-      break;
-    case "2":
-      print("\nCadastrar moto");
-      break;
-    case "3":
-      print("\nCadastrar caminhão");
-      break;
-    case "4":
-      print("\nCadastrar cliente");
-      break;
-    case "5":
-      print("\nListar veículos");
-      break;
-    case "6":
-      print("\nListar clientes");
-      break;
-    case "7":
-      print("\nRealizar locação");
-      break;
-    case "8":
-      print("\nFinalizar locação");
-      break;
-    case "9":
-      print("\nConsultar locações");
-      break;
-    case "0":
-      print("\nSair");
-      break;
-    default:
-      print("\nOpção inválida!");
+  while(opcao != "0"){
+    switch(opcao){
+      case "1":
+        print("\nCadastrar carro"); 
+        break;
+      case "2":
+        print("\nCadastrar moto");
+        break;
+      case "3":
+        print("\nCadastrar caminhão");
+        break;
+      case "4":
+        print("\nCadastrar cliente");
+        break;
+      case "5":
+        print("\nListar veículos");
+        break;
+      case "6":
+        print("\nListar clientes");
+        break;
+      case "7":
+        print("\nRealizar locação");
+        break;
+      case "8":
+        print("\nFinalizar locação");
+        break;
+      case "9":
+        print("\nConsultar locações");
+        break;
+      case "0":
+        print("\nSair");
+        break;
+      default:
+        print("\nOpção inválida!");
+    }
+    stdout.write("Escolha uma opção: ");
+    opcao = stdin.readLineSync()!;
   }
 }

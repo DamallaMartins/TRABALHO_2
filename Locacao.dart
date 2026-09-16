@@ -41,7 +41,7 @@ class Locacao{
   void exibirResumo(){
     print("======================\nResumo da locação:\n======================");
     print("Cliente: ${cliente.nome}");
-    print("Veículo: ${veiculo.placa}");
+    print("Veículo: ${veiculo.placa} - ${veiculo.modelo}");
     print("Dias de locação: $_dias");
     print("Valor total: $_valorTotal");
     print("Locação ativa: $_ativa");
